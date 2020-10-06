@@ -3,9 +3,7 @@ from django.urls import path, include
 from myweb import views
 
 urlpatterns = [
-    path('', views.index),
-    #path('polls/', include('polls.urls')),
+    path('', views.index, name='index'),
     path('myweb/', include('myweb.urls')),
-    path('united', views.united),
     path('admin/', admin.site.urls),
 ]

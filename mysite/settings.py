@@ -25,7 +25,9 @@ SECRET_KEY = 'l#d)=k3^2f9^39&__hb26y@cf+p95jv#g=p67-5yf9a1gi-$1+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [u'wichit2s.pythonanywhere.com']
+ALLOWED_HOSTS = [u'Noey.pythonanywhere.com']
+
+
 
 
 # Application definition
@@ -70,6 +72,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
+LOGIN_URL = 'logIn'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'logIn'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases

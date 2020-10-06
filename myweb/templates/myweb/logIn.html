@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Log In</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <style>
+     @import "https://use.fontawesome.com/release/v5.5.0/css/all.css";
+     body{
+       font-family: sans-serif;
+       background-image: url(https://journeywithparkinsons.files.wordpress.com/2018/06/sonoran-desert-cactus.jpg);
+       background-repeat: no-repeat;
+       overflow: hidden;
+       background-size: cover;
+     }
+     .container{
+       width: 380px;
+       margin: 5% auto;
+       border-radius: 25px;
+       background-color: rgba(0, 0, 0, 0.2);
+       box-shadow: 0 0 15px #333;
+     }
+     .header{
+       text-align: center;
+       padding-top: 75px;
+     }
+     .header h1 {
+       color: #333;
+       font-size: 45px;
+       margin-bottom: 80px;
+     }
+     .main{
+       text-align: center;
+
+     }
+     .main input, button{
+       width: 300px;
+       height: 40px;
+       border: none;
+       outline: none;
+       padding-left: 40px;
+       box-sizing: border-box;
+       font-size: 15px;
+       color: #333;
+       margin-bottom: 40px;
+
+     }
+     .main button{
+       padding-left: 0;
+       background-color: #83acf1;
+       letter-spacing: 1px;
+       font-weight: bold;
+       margin-bottom: 70px;
+
+     }
+     .main button:hover{
+      box-shadow: 2px 2px 5px #555;
+      background-color: #7799d4;
+
+     }
+     .main input:hover{
+      box-shadow: 2px 2px 5px #555;
+      background-color: #fff;
+     }
+     .main span{
+       position: relative;
+     }
+     .main i {
+       position: absolute;
+       left: 15px;
+       color: #333;
+       font-size: 16px;
+       top: 2px;
+     }
+
+
+
+   </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 style="font-weight: bold;">LogIn</h1>
+      </div>
+      <div class="main">
+
+        <form action="login_active" method="POST">
+            {% csrf_token %}
+          <span>
+            <i class="fa fa-user"></i>
+            <input type="text" placeholder="Username" name="">
+          </span><br>
+          <span>
+            <i class="fa fa-lock"></i>
+            <input type="password" placeholder="Password" name="">
+          </span><br>
+          <span>
+            <a href="shop" style="text-decoration: none;">
+              <button>Log in</a></button>
+            </a>
+          </span>
+        </form>
+      </div>
+    </div>
+
+
+  </body>
+</html>

@@ -14,3 +14,17 @@ class Choice(models.Model):
 
     def __str__(self):
         return f'{self.question.question_text} - {self.choice_text} - {self.votes}'
+
+class CactusType(models.Model):
+    text = models.CharField(max_length=200)
+
+    def __str__(self):
+        return f'{self.text}'
+
+class Cactus(models.Model):
+    cactusType = models.ForeignKey(CactusType, on_delete=models.CASCADE)
+    cactusName = models.CharField(max_length=200)
+    cactusPrice = models.IntegerField(default=0)
+
+    def __str__(self):
+        return f'{self.cactusType} - {self.cactusName} - {self.cactusPrice}'
