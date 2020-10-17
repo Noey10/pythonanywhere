@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<title>Contact</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<head>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <form method="POST" style="margin-top: 1rem;margin-bottom: 1rem;color:#000">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type ="submit" value="submit">
+    </form>
+
+</body>
+
+</html>

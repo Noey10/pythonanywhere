@@ -1,468 +1,113 @@
 <!DOCTYPE html>
 <html>
-<title>index</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+<title>Home</title>
 <head>
-	<style>
-		body {
-			margin: 0;
-			padding: 0;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			min-height: 100vh;
-			background-image: url(https://www.makalius.co.th/wp-content/gallery/ds1/1arabian3-343.jpg);
-			background-size: cover;
-			font-family: talic;
-		}
-		.container {
-			width: 1200px;
-			height: auto;
-			margin: auto;
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(350px, 5fr));
-			grid-gap: 10px;
-			padding: 10px;
-			box-sizing: border-box;
-			font-weight: bold;
-
-		}
-		.container .box {
-			font-style: italic;
-			position: relative;
-			padding: 20px 40px 20px;
-			text-align: center;
-			overflow: hidden;
-		}
-		button {
-			background-color: rgba(0.3, 0.3, 0.3, 0.3);
-			width: 300px;
-			height: 300px;
-			border: 0px;
-			margin: 0;
-		}
-		.bt-list li{
-			font-weight: bold;
-			float: none;
-			list-style: none;
-			margin-right: 36.5px;
-		}
-		.bt-list li:hover{
-			color:rgba(0, 0, 0, 0.3);
-		}
-		.bt-list li a{
-			font-weight: bold;
-			float: none;
-			list-style: none;
-			image-rendering: auto;
-			text-decoration: none;
-		}
-		.main {
-			background: rgba(0, 0, 0, 0);
-			overflow: auto;
-			font-weight: bold;
-			font-style: bold;
-		}
-		.menu {
-			color: black;
-			overflow: auto;
-		}
-		.m-head {
-			font-size: 150%;
-		}
-		.m-list {
-			margin-top: 0px;
-			padding-top: 0px;
-			font-size: 25px;
-		}
-		.m-list2 {
-			margin-top: 0px;
-			padding-top: 0px;
-			font-size: 25px;
-		}
-		.m-last {
-			text-align: center;
-		}
-		.m-page {
-			padding: 50px 20px;
-		}
-
-		.m-list li {
-			list-style: none;
-			float: left;
-			padding: 10px 16px;
-		}
-
-		.m-list2 li {
-			list-style: none;
-			float: left;
-			padding: 20px 60px;
-
-		}
-
-		.m-list li:hover {
-			color: rgb(248, 236, 236);
-		}
-
-		.m-list2 li:hover {
-			color: rgb(248, 236, 236);
-		}
-
-		.m-list li a {
-			text-decoration: none;
-			color: inherit;
-		}
-
-		.m-head:hover {
-			color: rgb(248, 236, 236);
-		}
-
-	</style>
+   <style>
+       *{
+           margin: 0;
+           padding: 0;
+           font-family: Century Gothic;
+       }
+       header{
+           background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://i0.wp.com/shopee.co.th/blog/wp-content/uploads/2020/06/cactusss.jpg?fit=1200%2C800&ssl=1&resize=1280%2C720);
+           height: 100vh;
+           background-size: cover;
+           background-position: center;
+       }
+       ul{
+           float: right;
+           list-style-type: none;
+           margin: 25px;
+       }
+       ul li{
+           display: inline-block;
+       }
+       ul li a{
+           text-decoration: none;
+           color: #fff;
+           padding: 5px 20px;
+           border: 1px solid transparent;
+           transition: 0.6s ease;
+       }
+       ul li a:hover{
+           background-color: #fff;
+           color: #000;
+       }
+       ul li.active a{
+            background-color: #fff;
+           color: #000;
+       }
+       .logo{
+           margin: 15px;
+           text-align: center;
+           float: left;
+           width: 250px;
+           height: 150px;
+       }
+       p{
+           font-size: 50px;
+           color: #fff;
+           border: 5px solid #fff;
+       }
+       .main{
+           max-width: 1450px;
+           margin: auto;
+       }
+       .title{
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%, -50%);
+       }
+       .title h1{
+           color: #fff;
+           font-size: 70px;
+       }
+       .button{
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+       }
+       .btn{
+           border: 1px solid #fff;
+           padding: 10px 30px;
+           color: #fff;
+           text-decoration: none;
+           transition: 0.6s ease;
+       }
+       .btn:hover{
+            background-color: #fff;
+            color: #000;
+       }
+   </style>
 </head>
-
 <body>
+    <form action="login_active" method="post" >
+    <header>
+        <div class="main">
+            <div class="logo">
+                <p>Cactus Shop</p>
+            </div>
+            <ul>
+                <li class="active"><a href="{% url 'index'%}">Home</a></li>
+                <li><a href="{% url 'contact'%}">Contact</a></li>
+                <li><a href="{% url 'about'%}">About</a></li>
+            </ul>
+        </div>
+        <div class="title">
+            <h1>Welcome to my web</h1>
+        </div>
+        <div class="button">
+            <a class="btn" onclick= "document.location='myweb/logIn'">Log in</a>
+            <!--<a href="logIn" class="btn">Log in</a>-->
+            <a class="btn" onclick= "document.location='myweb/signUp'">Sign up</a>
+        </div>
+    </header>
 
-	<div class=main>
-		<div class="menu">
-			<div class="m-head">
-				<h1 style="font-size: 80px;"><a href="index.html">Cactus Shop</a></h1>
-			</div>
-			<ul class="m-list">
-				<li><a href="index">Home</a></li>
-				<li><a href="shop">Shop</a></li>
-				<li><a href="logIn">Log In</a></li>
-				<li><a href="signUp">Sign Up</a></li>
-				<li><a href="contact">Contact</a></li>
-				<li><a href="about">About</a></li>
-			</ul>
-		</div>
-		<hr width="1200px">
-		<div class="m-page">
-			<h2 style="font-size: 60px; font-weight: bold;">Cactus</h2>
-		</div>
 
-		<div class="container">
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/succulents/01_19_Lithops_bromfieldii_20s_4.jpg?v=202009251017" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Lithops bromfieldii</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://cdn.shopify.com/s/files/1/0968/5384/products/6c4610c8-cb51-58f7-afd9-fa8fd73eccd0_1800x1800.jpg?v=1568820835" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Echinocereus triglochidiatus</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logInl">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/succulents/36_02_Gibbaeum_heathii_20s_1.jpg" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Gibbaeum heathii</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed3/04_33_mammillaria_johnstonii2.jpg?v=202009251017" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Mammillaria johnstonii</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed3/04_49_Mammillaria_hubertmulleri2.jpg" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Mammillaria hubertmulleri</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed3/42_07_Weingartia_riograndensis1.jpg?v=202009251017" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Weingartia riograndensis</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed3/42_05_Weingartia_longigibba1.jpg?v=202009251017" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Weingartia longigibba</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed3/42_03_Weingartia_kargliana1.jpg?v=202009251017" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Weingartia kargliana</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed3/42_10_Weingartia_trollii__red_flower_2.jpg?v=202009251017" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Weingartia trollii</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed3/43_01_Escobaria_chihuahuensis2.jpg?v=202009251017" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Escobaria chihuahuensis</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed3/43_02_Escobaria_laredoi1.jpg" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Escobaria laredoi</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed3/43_05_Escobaria_nellieae_minima1.jpg" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Escobaria nellieae(minima)</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed3/41_04_Neoporteria_subgibbosa1.jpg?v=202009251017" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Neoporteria subgibbosa</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed2/02_06_Opuntia_phaeacantha2_600px.jpg" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Opuntia phaeacantha</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed3/04_42_Mammillaria_goldii3.jpg" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Mammillaria goldii</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed2/20_07_Notocactus_ottonis_2.jpg" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Notocactus ottonis</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed3/23_03_Ferocactus_flavovirens3.jpg" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Ferocactus flavovirens</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed2/21_01_Conophytum_calculus_1.jpg" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Conophytum calculus</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/succulents/01_17_Lithops_amicorum_C410_20s_3.jpg?v=202009251017" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Lithops amicorum</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed2/03_25_Gymnocalycium_eurypleurum_1.jpg" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Gymnocalycium catamarcense</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/succulents/01_18_Lithops_aucampiae_red_black_selection_20s_5.jpg" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Lithops aucampiae,red+black</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed2/20_04_Notocactus_herteri_3.jpg?v=202009251017" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Notocactus herteri</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed2/20_08_Notocactus_scopa_4.jpg" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Notocactus scopa</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed2/20_11_Notocactus_uebelmannianus_HU78_v_flaviflorus_1.jpg?v=202009251017" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Notocactus uebelmannianus</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed2/21_02_Conophytum_friedrichiae_ophthalmophyllum_2.jpg" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Conophytum friedrichiae</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed2/21_03_Conophytum_subfenestratum_ophthalmophyllum1.jpg" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Conophytum subfenestratum</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed2/09_22_Echinocereus_scheeri_3.jpg" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Conophytum friedrichiae</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed2/02_08_Opuntia_quimilo4_600px.jpg?v=202009251017" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Opuntia quimilo</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed/04_07_Mammillaria_gasterantha%C2%A01.jpg" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Mammillaria gasterantha </a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-			<div class="box">
-				<button>
-					<ul class="bt-list">
-						<li style="padding-top: 20px;"><a href="logIn"><img src="https://image.makewebeasy.net/makeweb/0/edVxXaTKt/importseed/03_01_Gymnocalycium_baldianum2.jpg" width="160px" height="160px"></a></li>
-						<li style="padding-top: 10px; font-size: 16px;"><a href="shop" style="text-decoration: none;">Gymnocalycium baldianum</a></li>
-						<li style="padding-top: 5px; font-size: 16px;"><a href="logIn">Price : 50฿</a></li>
-						<li style="padding-top: inherit; padding-right: 15px; font-size: 18px;"><a href="logIn">Buy</a></li>
-					</ul>
-				</button>
-			</div>
-		</div>
-		<hr width="1200px">
-		<div class="m-last">
-			<div class="m-cont">
-				<div class="m-contlist">
-					<h2 style="font-size: 60px;">Credit</h2>
-				</div>
-				<ul class="m-list2">
-					<li><a href="{% url 'index'%}">Home</a></li>
-					<li><a href="{% url 'shop'%}">Home</a></li>
-					<li><a href="{% url 'logIn'%}">Home</a></li>
-					<li><a href="{% url 'signUp'%}">Home</a></li>
-					<li><a href="{% url 'index'%}">Home</a></li>
-					<li><a href="{% url 'contact'%}">Home</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
+    </form>
 </body>
 
 </html>

@@ -13,7 +13,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-image: url(https://www.makalius.co.th/wp-content/gallery/ds1/1arabian3-343.jpg);
+            background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://www.espoma.com/wp-content/uploads/2017/04/Cactus-plants.jpg);
             background-size: cover;
             font-family: talic;
         }
@@ -126,7 +126,8 @@
             outline: none;
             border: none;
             border-bottom: 0.3px dotted #fff;
-            color: #fff;
+            color: black;
+            font-size: 20px;
             border-radius: 5px;
             margin: 5px;
             font-weight: bold;
@@ -165,15 +166,12 @@
     <div class=main>
         <div class="menu">
             <div class="m-head">
-                <h1 style="font-size: 80px;"><a href="index.html">Cactus Shop</a></h1>
+                <h1 style="font-size: 80px;"><a href="shop.html">Cactus Shop</a></h1>
             </div>
             <ul class="m-list">
-                <li><a href="index">Home</a></li>
-                <li><a href="shop">Shop</a></li>
-                <li><a href="logIn">Log In</a></li>
-                <li><a href="index">Log Out</a></li>
-                <li><a href="contact">Contact</a></li>
-                <li><a href="about">About</a></li>
+                <li><a href="{% url 'shop'%}">Shop</a></li>
+                <li><a href="{% url 'contact'%}">Contact</a></li>
+                <li><a href="{% url 'about'%}">About</a></li>
             </ul>
         </div>
         <hr width="1200px">
@@ -190,25 +188,17 @@
                     <Address style="font-size: 18px; padding-left: 0px;">
                         1/1 m.4 Janlan Phana District <br>Amnatcheroen Province 37180
                     </Address>
+            </div>
+            <div class="box">
+                <div class="wrap">
                     <h3 style="font-weight: inherit; padding-left: 0px;">Email </h3>
                     <p style="font-size: 18px; padding-left: 0px;">sirinya.ba.62@ubu.ac.th</p>
-                    <h3 style="font-weight: inherit; padding-left: 0px;">Facebook </h3>
-                    <p style="font-size: 18px; padding-left: 0px;">Sirinya Baokham</p>
-                    <h3 style="font-weight: inherit; padding-left: 0px;">Tel </h3>
-                    <p style="font-size: 18px; padding-left: 0px;">095-801-0390</p>
                 </div>
             </div>
             <div class="box">
                 <div class="wrap">
-                    <h1 style="font-weight: bold;">GET IN TOUCH</h1>
-                    <form>
-                        <input type="text" placeholder="Full name" required>
-                        <input type="text" placeholder="Email" required>
-                        <input type="text" placeholder="title" required>
-                        <input type="text" placeholder="Messeage" required>
-                        <button type="submit" class="signupbtn">Send</button>
-                    </form>
-
+                    <h3 style="font-weight: inherit; padding-left: 0px;">Facebook </h3>
+                    <p style="font-size: 18px; padding-left: 0px;">Sirinya Baokham</p>
                 </div>
             </div>
         </div>

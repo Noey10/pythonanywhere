@@ -19,10 +19,7 @@ def signUp(request):
             return redirect('logIn')
     else:
         form = UserCreationForm()
-    return render(request, 'myweb/register.html', {'form': form})
-
-def index1(req):
-	return render(req, 'myweb/index1.html')
+    return render(request, 'myweb/signUp.html', {'form': form})
 
 def index(req):
 	return render(req, 'myweb/index.html')
@@ -41,6 +38,21 @@ def login_active(req):
 
 def logIn_page(req):
 	return render(req, 'myweb/logIn.html')
+
+def test(req):
+    return render(req, 'myweb/test.html')
+
+def order(req):
+    if req.method == "POST":
+        form = order(req.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("test")
+    else:
+        form = order()
+        context = {'form':form}
+        return render(req, 'myweb/order.html',context)
+
 
 def united(req):
 	return render(req, 'myweb/united.html')
