@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Shop</title>
+<title>Add order</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
@@ -15,11 +15,11 @@
 			min-height: 100vh;
 			background-image: url(https://www.makalius.co.th/wp-content/gallery/ds1/1arabian3-343.jpg);
 			background-size: cover;
-			font-family: talic;
+			font-family: Century Gothic;
 		}
 
 		.container {
-			width: 1200px;
+			width: 720px;
 			height: auto;
 			margin: auto;
 			display: grid;
@@ -28,15 +28,19 @@
 			padding: 10px;
 			box-sizing: border-box;
 			font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.3);
 
 		}
 
 		.container .box {
-			font-style: italic;
+			font-family: Century Gothic;
 			position: relative;
 			padding: 20px 40px 20px;
 			text-align: center;
 			overflow: hidden;
+		}
+		.container p{
+		    padding-top: 0;
 		}
 
 		button {
@@ -107,12 +111,13 @@
 			float: left;
 			padding: 10px 16px;
 		}
-
+        .mainlist2{
+            padding: 10px 420px;
+        }
 		.m-list2 li {
 			list-style: none;
 			float: left;
-			padding: 20px 60px;
-
+			padding: 10px 10px;
 		}
 
 		.m-list li:hover {
@@ -120,13 +125,16 @@
 		}
 
 		.m-list li a {
+		    text-align: center;
 			text-decoration: none;
 			color: inherit;
 		}
+        th, td {
+            border: 1px solid black;
+            text-align: center;
+            border-color: #fff;
+        }
 
-		.m-head:hover {
-			color: rgb(248, 236, 236);
-		}
 	</style>
 </head>
 
@@ -135,44 +143,59 @@
 	<div class=main>
 		<div class="menu">
 			<div class="m-head">
-				<h1 style="font-size: 80px;"><a href="index">Cactus Detail</a></h1>
+				<h1 style="font-size: 80px;">Cactus Shop</h1>
 			</div>
 			<ul class="m-list">
 				<li><a href="shop">Shop</a></li>
-				<li><a href="contact">About</a></li>
 				<li><a href="index">Log Out</a></li>
 			</ul>
 		</div>
 		<hr width="1200px">
 		<div class="m-page">
-		<form method="POST">
-		   	{% csrf_token %}
-
-			<div style="font-size:2rem;">{{ form.as_p }}</div>
-			<h2 style="font-size: 60px; font-weight: bold;">{{ i.id }}</h2>
-
-
-
-
-            <button type="submit" style="height:10%;width:10%;margin-left:7rem;padding:0.5rem;font-size:2rem;">doso</button>
-		</form>
+			<h2 style="font-size: 60px; font-weight: bold;">Order</h2>
 		</div>
 		<div class="container">
+		    <p style="font-size: 20px;">
+		        Hey!! This is your order {{user}}
+		    </p>
+            <table>
+                <table>
 
+                    {% for i in ordercactus %}
+			            <p>ID : {{ i.id }}</p>
+			            <p>Name : {{ i.cactusName }}</p>
+			            <p>Price :{{ i.cactusPrice }}</p>
+			            <p>Amount : {{ i.amout }}</p>
+			        {% endfor %}
 
+                  </table>
+            </table>
+            <form action="{% url 'order'%}" style="text-align: right;">
+                If you can add order again?<br>
+                <input type="submit" value="Add">
+            </form>
 
 		</div>
 		<hr width="1200px">
+
 		<div class="m-last">
 			<div class="m-cont">
 				<div class="m-contlist">
-					<h2 style="font-size: 60px;">Contact</h2>
+					<h2 style="font-size:30px;">Contact me</h2>
 				</div>
-				<ul class="m-list2">
-					<li>Gmail : <br> sirinya.ba.62@ubu.ac.th</li>
-					<li>Facebook : <br> Sirinya Baokham</li>
-					<li>Address : <br> Ubonratchathani University</li>
-				</ul>
+				<div class="mainlist2">
+				    <ul class="m-list2">
+					    <li action="{% url 'order'%}">
+					        <img src="https://www.flaticon.com/svg/static/icons/svg/356/356020.svg"
+						     width="50px" height="50px">
+						</li>
+				    	<li action="{% url 'order'%}">
+				    	    <img src="https://www.flaticon.com/svg/static/icons/svg/356/356043.svg"
+						     width="50px" height="50px" >
+					    </li>
+				    </ul>
+				</div>
+
 			</div>
 		</div>
 	</div>

@@ -84,30 +84,26 @@
    </style>
 </head>
 <body>
-    <form action="login_active" method="post" >
     <header>
         <div class="main">
             <div class="logo">
                 <p>Cactus Shop</p>
             </div>
             <ul>
-                <li class="active"><a href="{% url 'index'%}">Home</a></li>
-                <li><a href="{% url 'contact'%}">Contact</a></li>
-                <li><a href="{% url 'about'%}">About</a></li>
+                <li class="active"><a href="#">Home</a></li>
             </ul>
         </div>
         <div class="title">
             <h1>Welcome to my web</h1>
         </div>
         <div class="button">
-            <a class="btn" onclick= "document.location='myweb/logIn'">Log in</a>
-            <!--<a href="logIn" class="btn">Log in</a>-->
-            <a class="btn" onclick= "document.location='myweb/signUp'">Sign up</a>
+            <a href="{% url 'logIn'%}" class="btn">Log in</a>
+            <a href="{% url 'signUp'%}" class="btn">Sign up</a>
         </div>
     </header>
 
 
-    </form>
+
 </body>
 
 </html>

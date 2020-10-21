@@ -83,9 +83,7 @@
         <h1 style="font-weight: bold;">LogIn</h1>
       </div>
       <div class="main">
-
-        <form action="login_active" method="POST">
-            {% csrf_token %}
+        <form>
           <span>
             <i class="fa fa-user"></i>
             <input type="text" placeholder="Username" name="">
@@ -95,8 +93,8 @@
             <input type="password" placeholder="Password" name="">
           </span><br>
           <span>
-            <a href="{% url 'shop'%}" style="text-decoration: none;">
-              <button style="text-decoration: none;">Log in</a></button>
+            <a href="shop" style="text-decoration: none;">
+              <button><a href="shop">Log in</a></button>
             </a>
           </span>
         </form>
