@@ -1,6 +1,5 @@
 from django.contrib import admin
 
-from .models import Cactus,MyUser
+from .models import Cactus
 
 admin.site.register(Cactus)
-admin.site.register(MyUser)

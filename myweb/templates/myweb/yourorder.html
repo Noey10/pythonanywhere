@@ -155,18 +155,20 @@
 			<h2 style="font-size: 60px; font-weight: bold;">Order</h2>
 		</div>
 		<div class="container">
-		    <p style="font-size: 20px;">
+		    <p style="font-size: 20px;text-align:center;">
 		        Hey!! This is your order {{user}}
 		    </p>
             <table>
                 <table>
-
+					<center>
                     {% for i in ordercactus %}
 			            <p>ID : {{ i.id }}</p>
 			            <p>Name : {{ i.cactusName }}</p>
 			            <p>Price :{{ i.cactusPrice }}</p>
 			            <p>Amount : {{ i.amout }}</p>
+						<p><img src="{{ i.img }}" style="height:250px;width:250px;border-radius:10px;"></p>
 			        {% endfor %}
+					<center>
 
                   </table>
             </table>

@@ -1,33 +1,50 @@
-from django.db.models import fields
+
 from django.forms import ModelForm
 
 # ---ใช้สำหรับหน้าสมัคร ---
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
+
 #---------------------
 
 
-from .models import Cactus, MyUser
+from .models import Cactus
 
 class Order(ModelForm):
     class Meta:
         model = Cactus
         fields = ['cactusName','cactusPrice', 'amout']
 
-
-class addUsers(ModelForm):
-
-    class Meta:
-        model = MyUser
-        fields = ["Firstname","Lastname","username","password","email"]
-
-
 searchchoices = (
-        (1 , 'Echinocereus triglochidiatus'),
-        (2 , 'Gibbaeum heathii'),
-        (3 , 'test'),
-        (4 , 'test2'),
+        ('lithops bromfieldii', 'lithops bromfieldii'),
+        ('echinocereus triglochidiatus', 'ehinocereus triglochidiatus'),
+        ('gibbaeum heathii', 'gibbaeum heathii'),
+        ('mammillaria johnstonii', 'mammillaria johnstonii'),
+        ('mammillaria hubertmulleri', 'mammillaria hubertmulleri'),
+        ('weingartia riograndensis', 'weingartia riograndensis'),
+        ('weingartia longigibba', 'weingartia longigibba'),
+        ('weingartia kargliana', 'weingartia kargliana'),
+        ('weingartia trollii', 'weingartia trollii'),
+        ('escobaria chihuahuensis', 'escobaria chihuahuensis'),
+        ('escobaria laredoi', 'escobaria laredoi'),
+        ('escobaria nellieae(minimal)' , 'Escobaria nellieae(minimal)'),
+        ('neoporteria subgibbosa', 'neoporteria subgibbosa'),
+        ('opuntia phaeacantha', 'opuntia phaeacantha'),
+        ('mammillaria goldii', 'mammillaria goldii'),
+        ('notocactus ottonis', 'notocactus ottonis'),
+        ('ferocactus flavovirens', 'ferocactus flavovirens'),
+        ('conophytum calculus', 'conophytum calculus'),
+        ('lithops amicorum', 'lithops amicorum'),
+        ('gymnocalycium catamarcense', 'gymnocalycium catamarcense'),
+        ('lithops aucampiae', 'lithops aucampiae'),
+        ('notocactus herteri', 'notocactus herteri'),
+        ('notocactus scopa', 'notocactus scopa'),
+        ('notocactus uebelmannianus', 'notocactus uebelmannianus'),
+        ('conophytum friedrichiae', 'conophytum friedrichiae'),
+        ('conophytum subfenestratum', 'conophytum subfenestratum'),
+        ('conophytum friedrichiae', 'conophytum friedrichiae'),
+        ('opuntia quimilo', 'opuntia quimilo'),
+        ('gammillaria gasterantha', 'gammillaria gasterantha'),
+        ('gymnocalycium baldianum', 'gymnocalycium baldianum'),
 
     )
 
